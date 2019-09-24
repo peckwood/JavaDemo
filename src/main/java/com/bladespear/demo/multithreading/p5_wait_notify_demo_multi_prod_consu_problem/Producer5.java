@@ -4,8 +4,6 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class Producer5 implements Runnable {
-
-    private String threadName;
     private final LinkedList<Integer> integerQueue;
     private final int MAX_CAPACITY;
     private int number = 1;
@@ -13,7 +11,6 @@ public class Producer5 implements Runnable {
 
     @Override
     public void run() {
-        threadName = Thread.currentThread().getName();
         while (true) {
             try {
                 produce();
@@ -30,15 +27,21 @@ public class Producer5 implements Runnable {
 
     private void produce() throws InterruptedException {
         synchronized (integerQueue) {
+            String threadName = Thread.currentThread().getName();
             System.out.println(String.format("\nProducer %s has lock", threadName));
             /*
             'while' is mandatory because 'if' only checks once,
                 after which only spot might have been already been filled by another thread
                 and it is trying to fill an full queue (imagine the it has max capacity)
              */
-            while (integerQueue.size() == MAX_CAPACITY) {
+            boolean lostLock = false;
+            while (integerQueue.size() >= MAX_CAPACITY) {
                 System.out.println(String.format("Queue full, %s waits.", threadName));
+                lostLock = true;
                 integerQueue.wait();
+            }
+            if(lostLock){
+                System.out.println(String.format("\nProducer %s has reacquired lock", threadName));
             }
             integerQueue.add(number);
             System.out.println(String.format("%s produced %d, integerQueue: %s", threadName, number, integerQueue));

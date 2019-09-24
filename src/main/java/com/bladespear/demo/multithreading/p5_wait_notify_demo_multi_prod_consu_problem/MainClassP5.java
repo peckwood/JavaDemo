@@ -12,7 +12,7 @@ public class MainClassP5 {
 
         BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<>(10);
         CustomThreadFactory customThreadFactory = new CustomThreadFactory();
-        ExecutorService pool = new ThreadPoolExecutor(10, 10, 5, TimeUnit.SECONDS, workQueue, customThreadFactory);
+        ExecutorService pool = new ThreadPoolExecutor(20, 40, 100, TimeUnit.SECONDS, workQueue, customThreadFactory);
 
         pool.execute(producer);
         pool.execute(producer);
