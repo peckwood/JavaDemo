@@ -10,9 +10,9 @@ public class MainClassP5 {
         Producer5 producer = new Producer5(queue, maxCapacity);
         Consumer5 consumer = new Consumer5(queue);
 
-        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<>(10);
+        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<>(80);
         CustomThreadFactory customThreadFactory = new CustomThreadFactory();
-        ExecutorService pool = new ThreadPoolExecutor(20, 40, 100, TimeUnit.SECONDS, workQueue, customThreadFactory);
+        ExecutorService pool = new ThreadPoolExecutor(10, 20, 100, TimeUnit.SECONDS, workQueue, customThreadFactory);
 
         pool.execute(producer);
         pool.execute(producer);
@@ -25,6 +25,12 @@ public class MainClassP5 {
         pool.execute(consumer);
         pool.execute(consumer);
         pool.execute(consumer);
-        Thread.sleep(5000);
+
+        //guess how many what will 'workQueue.size()' print?
+//        for(int i =0 ;i<50;i++){
+//            pool.execute(producer);
+//            pool.execute(consumer);
+//        }
+//        System.out.println(workQueue.size());
     }
 }
