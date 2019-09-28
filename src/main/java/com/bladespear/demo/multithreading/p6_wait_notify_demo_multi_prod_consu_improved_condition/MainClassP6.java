@@ -8,8 +8,8 @@ public class MainClassP6 {
         LinkedList<Integer> queue = new LinkedList<>();
         IntegerQueue integerQueue = new IntegerQueue(queue);
         int maxCapacity = 4;
-        Producer5 producer = new Producer5(integerQueue, maxCapacity);
-        Consumer5 consumer = new Consumer5(integerQueue);
+        Producer6 producer = new Producer6(integerQueue, maxCapacity);
+        Consumer6 consumer = new Consumer6(integerQueue);
 
         BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<>(80);
         CustomThreadFactory customThreadFactory = new CustomThreadFactory();

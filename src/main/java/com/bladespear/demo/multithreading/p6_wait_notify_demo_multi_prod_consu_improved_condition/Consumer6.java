@@ -2,7 +2,7 @@ package com.bladespear.demo.multithreading.p6_wait_notify_demo_multi_prod_consu_
 
 import java.util.Random;
 
-public class Consumer5 implements Runnable {
+public class Consumer6 implements Runnable {
     private final IntegerQueue integerQueue;
     private final Random random = new Random();
 
@@ -52,7 +52,7 @@ public class Consumer5 implements Runnable {
         Thread.sleep(random.nextInt(1000));
     }
 
-    public Consumer5(IntegerQueue integerQueue) {
+    public Consumer6(IntegerQueue integerQueue) {
         this.integerQueue = integerQueue;
     }
 }
