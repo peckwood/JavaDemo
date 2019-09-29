@@ -24,7 +24,7 @@ A demo to show the usages of `wait` and `notify`.
    Queue empty, t10 waits.
    ```
 
-   When a consumer consumed the last element, it releases the lock and waits. Now this lock should NOT be acquired by any consumers because they will just wait as well. We will fix this in p6 by using a write and read lock.
+   When a consumer consumed the last element, it releases the lock and waits. Now this lock should NOT be acquired by any consumers because they will just wait as well. We will fix this in p6 by adding conditions.
 
 2. how to use ThreadFactory to create named threads with ThreadPoolExecutor, 
 
@@ -37,5 +37,9 @@ A demo to show the usages of `wait` and `notify`.
 
    > Dropbox\learning_notes\java\classes\ThreadPoolExecutor
 
+### p6 
 
+Checking conditions as well as locks to make sure no threads are waiting in vein. 
+
+In p7, we will use `Lock` and `Condition` to implement this.
 

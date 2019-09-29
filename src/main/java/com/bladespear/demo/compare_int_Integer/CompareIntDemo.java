@@ -6,6 +6,7 @@ public class CompareIntDemo {
         Integer b = Integer.valueOf(1);
         Integer c = new Integer(1);
 
+
         System.out.println("a == b: " + (a == b));
 
         System.out.println("b.equals(a): " + b.equals(1));
@@ -13,5 +14,8 @@ public class CompareIntDemo {
 
         System.out.println("b.equals(c)) " + b.equals(c));
         System.out.println("b==c: " + (b==c));
+
+        b = null;
+        System.out.println("compare int with null: a == null: " + (a == b));
     }
 }
