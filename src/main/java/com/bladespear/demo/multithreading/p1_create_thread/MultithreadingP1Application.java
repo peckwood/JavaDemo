@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 
 //4 ways to create a thread
 public class MultithreadingP1Application {
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) throws ExecutionException, InterruptedException, TimeoutException {
         //继承Thread类
         Thread1 thread1 = new Thread1();
         thread1.start();
@@ -34,6 +34,7 @@ public class MultithreadingP1Application {
         System.out.println("=================================================");
         ExecutorService executorService1 = Executors.newSingleThreadExecutor();
         Future future = executorService1.submit(new Callable1());
+        System.out.println("is Callabl1 done after 10 milliseconds? " + future.isDone());
         System.out.println("Callable1 of executorService1 result: " +future.get());
         executorService1.shutdown();
 
