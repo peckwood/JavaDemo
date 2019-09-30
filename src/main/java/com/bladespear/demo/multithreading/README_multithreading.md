@@ -43,3 +43,8 @@ Checking conditions as well as locks to make sure no threads are waiting in vein
 
 In p7, we will use `Lock` and `Condition` to implement this.
 
+### p8
+
+Shows how to use ThreadLocal to solve the issues happened [here](https://stackoverflow.com/questions/58078629/multiple-producer-and-consumer-multithreading-java-not-working-as-intended).
+
+> http://tutorials.jenkov.com/java-concurrency/threadlocal.html
