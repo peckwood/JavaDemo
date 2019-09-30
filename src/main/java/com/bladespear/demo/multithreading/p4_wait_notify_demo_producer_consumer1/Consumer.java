@@ -22,7 +22,7 @@ public class Consumer implements Runnable {
     private void consume() throws InterruptedException {
         synchronized (integerQueue) {
             while (integerQueue.isEmpty()) {
-                System.out.println("Queue empty, Consumer5 waits.");
+                System.out.println("Queue empty, Consumer waits.");
                 integerQueue.wait();
             }
             Integer number = integerQueue.pop();

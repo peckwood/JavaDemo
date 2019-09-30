@@ -30,7 +30,7 @@ public class Producer implements Runnable {
     private void produce() throws InterruptedException {
         synchronized (integerQueue) {
             while (integerQueue.size() == MAX_CAPACITY) {
-                System.out.println("Queue full, Producer5 waits.");
+                System.out.println("Queue full, Producer waits.");
                 integerQueue.wait();
             }
             integerQueue.add(number);

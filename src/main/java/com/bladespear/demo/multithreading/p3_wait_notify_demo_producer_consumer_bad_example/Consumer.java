@@ -15,7 +15,7 @@ public class Consumer implements Runnable {
                         integerQueue.wait();
                     } else {
                         Integer number = integerQueue.pop();
-                        System.out.println("Consumer5 took " + number);
+                        System.out.println("Consumer took " + number);
                         Thread.sleep(1000);
                         integerQueue.notifyAll();
                     }

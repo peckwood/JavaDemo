@@ -18,7 +18,7 @@ public class Producer implements Runnable {
                     } else {
                         int number = i++;
                         integerQueue.add(number);
-                        System.out.println("Producer5 added " + number);
+                        System.out.println("Producer added " + number);
                         Thread.sleep(1000);
                         integerQueue.notifyAll();
                     }
