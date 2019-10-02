@@ -14,7 +14,6 @@ public class D32_ObjectInputStreamDemo {
             e.printStackTrace();
         }
 
-
         try {
             FileInputStream fileInputStream = new FileInputStream(filePath);
             ObjectInputStream input = new ObjectInputStream(fileInputStream);
@@ -23,7 +22,5 @@ public class D32_ObjectInputStreamDemo {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
     }
 }
