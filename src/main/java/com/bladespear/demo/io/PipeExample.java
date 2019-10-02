@@ -1,11 +1,11 @@
-package com.bladespear.demo.io.pipe;
+package com.bladespear.demo.io;
 
 import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 
 public class PipeExample {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         final PipedOutputStream out = new PipedOutputStream();
         final PipedInputStream in = new PipedInputStream(out);
         //you can also connect pipes with connect()
@@ -15,14 +15,12 @@ public class PipeExample {
         Thread thread1 = new Thread(() -> {
             try {
                 out.write("Hello Pipe!".getBytes());
-                out.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
 
         Thread thread2 = new Thread(() -> {
-            byte[] buffer = new byte[2014];
             try {
                 int data = in.read();
                 while(data != -1){
@@ -38,5 +36,9 @@ public class PipeExample {
 
         thread1.start();
         thread2.start();
+        thread1.join();
+        thread2.join();
+        out.close();
+        in.close();
     }
 }

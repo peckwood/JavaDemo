@@ -1,4 +1,4 @@
-package com.bladespear.demo.io.pipe;
+package com.bladespear.demo.io;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -19,7 +19,7 @@ public class ByteArrayOutputStreamDemo {
         //approach 1
         byte[] buffer = new byte[bufferLength];
         int bytesRead = input.read(buffer, 0, bufferLength);
-        System.out.println("received: " + new String(buffer));
+        System.out.println("received: " + new String(buffer, 0, bytesRead, StandardCharsets.UTF_8));
         System.out.println(bytesRead + " bytes were read");
 
 
