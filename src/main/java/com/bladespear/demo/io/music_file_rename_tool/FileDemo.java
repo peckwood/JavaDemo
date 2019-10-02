@@ -17,7 +17,9 @@ public class FileDemo {
         List<String> nullFileTypeNames = new ArrayList<>();
         int maxAuthorLength = 0;
         int maxSongNameLength = 0;
+        //Read List of Files in Directory
         Arrays.stream(musicFolder.listFiles()).forEach(file -> {
+            //Check if Path is File or Directory
             if (file.isDirectory()) {
                 folders.add(file);
                 System.out.println("dir: " + file);

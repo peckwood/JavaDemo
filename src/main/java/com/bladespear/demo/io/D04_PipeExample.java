@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 
-public class PipeExample {
+public class D04_PipeExample {
     public static void main(String[] args) throws IOException, InterruptedException {
         final PipedOutputStream out = new PipedOutputStream();
         final PipedInputStream in = new PipedInputStream(out);

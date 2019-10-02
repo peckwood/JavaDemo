@@ -5,7 +5,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-public class ByteArrayOutputStreamDemo {
+/**
+ * ByteArrayInputStream's can be handy if your data is stored in an array,
+ * but you have a component that can only process it as an InputStream.
+ * The ByteArrayInputStream can thus wrap the byte array, and turn it into a stream.
+ */
+public class D22_ByteArrayOutputStreamDemo {
     public static void main(String[] args) throws IOException {
         String data1 = "你好 ByteArrayOutputStream!";
         ByteArrayOutputStream output = new ByteArrayOutputStream();

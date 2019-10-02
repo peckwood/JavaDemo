@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * OutputStreamWriter converts OutputStream to Writer
  */
-public class OutputStreamWriterDemo {
+public class D38_OutputStreamWriterDemo {
     public static void main(String[] args) {
         String story = "故事 Eternal love\n" +
                 "\n" +
@@ -21,7 +21,7 @@ public class OutputStreamWriterDemo {
         boolean append = false;
         //Charset.forName("GB2312")
         try (OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
-                new FileOutputStream("D:/eternal_love.txt", append), StandardCharsets.UTF_8)){
+                new FileOutputStream("io/eternal_love_output_stream_writer.txt", append), StandardCharsets.UTF_8)){
             char[] charArray = story.toCharArray();
             outputStreamWriter.write(charArray, 0, charArray.length);
         } catch (IOException e) {

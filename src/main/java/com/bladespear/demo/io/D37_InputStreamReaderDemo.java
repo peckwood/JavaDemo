@@ -8,9 +8,9 @@ import java.nio.charset.StandardCharsets;
 /**
  * InputStreamReader converts InputStream to Reader
  */
-public class InputStreamReaderDemo {
+public class D37_InputStreamReaderDemo {
     public static void main(String[] args) {
-        String textFilePath = "input.txt";
+        String textFilePath = "io/input.txt";
         try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(textFilePath);
              //设置编码
              InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {

@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-public class RandomAccessFileDemo {
+public class D17_RandomAccessFileDemo {
     public static void main(String[] args) {
-        String path = "input.txt";
-        File inputFile = new File("D:\\workspace\\java_project\\org_json_demo\\src\\main\\resources\\input.txt");
+        String path = "io/input.txt";
+        File inputFile = new File("io/input.txt");
         try(RandomAccessFile file = new RandomAccessFile(inputFile, "rw")) {
             file.seek(200);
             byte[] buffer = new byte[257];
