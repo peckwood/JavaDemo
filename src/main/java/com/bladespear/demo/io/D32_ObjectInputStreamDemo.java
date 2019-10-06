@@ -4,7 +4,7 @@ import java.io.*;
 
 public class D32_ObjectInputStreamDemo {
     public static void main(String[] args) {
-        String filePath = "io/genereted_object.data";
+        String filePath = "io/generated_object.data";
         try(FileOutputStream fileOutputStream = new FileOutputStream(filePath);
             ObjectOutputStream output = new ObjectOutputStream(fileOutputStream)) {
             //class must be Serializable
