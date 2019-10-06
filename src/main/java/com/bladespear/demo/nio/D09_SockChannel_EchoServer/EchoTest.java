@@ -1,4 +1,4 @@
-package com.bladespear.demo.nio.D09_SockChannelDemo1;
+package com.bladespear.demo.nio.D09_SockChannel_EchoServer;
 
 import java.io.IOException;
 
