@@ -1,4 +1,4 @@
-package com.bladespear.demo.nio.D09_SockChannel_EchoServer;
+package com.bladespear.demo.nio.D09_SocketChannel_EchoServer;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +11,8 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
-import static java.nio.channels.SelectionKey.*;
+import static java.nio.channels.SelectionKey.OP_ACCEPT;
+import static java.nio.channels.SelectionKey.OP_READ;
 
 public class EchoServer {
     private static final String POISON_PILL = "POISON_PILL";
@@ -67,6 +68,7 @@ public class EchoServer {
         if(msg.trim().equals(POISON_PILL)){
             client.close();
             System.out.println("Not accepting client messages anymore");
+            System.exit(0);
         }
         //When we desire to write to a buffer from which we have been reading, we must call the flip() method.
         buffer.flip();

@@ -1,9 +1,12 @@
-package com.bladespear.demo.nio.D09_SockChannel_EchoServer;
+package com.bladespear.demo.nio.D09_SocketChannel_EchoServer;
 
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * based on https://www.baeldung.com/java-nio-selector
+ */
 public class EchoTest {
     static Process server;
     static EchoClient client;
