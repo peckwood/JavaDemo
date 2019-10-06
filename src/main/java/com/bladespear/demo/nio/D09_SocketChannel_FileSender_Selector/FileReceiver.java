@@ -9,6 +9,10 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Iterator;
 
+/**
+ * not recommended, the code is not working properly
+ * the receiver keeps selecting
+ */
 public class FileReceiver {
 
     public static void main(String[] args) throws IOException {
