@@ -7,6 +7,11 @@ import java.nio.channels.SocketChannel;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**
+ * not recommended, the code is not working properly
+ * the receiver keeps selecting after clents closes channel
+ * edit: now it closes the channel if the client closes channel, it will read -1, then it will close server channel
+ */
 public class FileSender {
     private static SocketChannel client;
 
@@ -23,7 +28,7 @@ public class FileSender {
         FileChannel fileChannel = FileChannel.open(path);
 
         //approach 1
-       fileChannel.transferTo(0, fileChannel.size(), client);
+        fileChannel.transferTo(0, fileChannel.size(), client);
 
         //approach 2
 //        ByteBuffer buffer = ByteBuffer.allocate(1024);
