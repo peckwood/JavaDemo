@@ -10,16 +10,12 @@ public class EchoClient {
     private static ByteBuffer buffer;
     private static EchoClient instance;
 
-    public static void main(String[] args) {
-        EchoClient client = EchoClient.start();
-        client.sendMessage("hi");
-        client.sendMessage("hi");
-        client.sendMessage("hi");
-        client.sendMessage("hi");
-        client.sendMessage("POISON_PILL");
-//        String resp2 = client.sendMessage("there");
-//        System.out.println(resp2);
-
+    public static void main(String[] args) throws IOException {
+        EchoClient echoClient = EchoClient.start();
+        echoClient.sendMessage("hello");
+        echoClient.sendMessage("world");
+        echoClient.sendMessage("POISON_PILL");
+        stop();
     }
 
     public static EchoClient start() {
@@ -58,6 +54,4 @@ public class EchoClient {
         }
         return response;
     }
-
-
 }

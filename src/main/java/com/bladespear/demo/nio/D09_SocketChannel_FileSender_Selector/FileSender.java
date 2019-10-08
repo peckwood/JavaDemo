@@ -13,7 +13,6 @@ public class FileSender {
     public static void main(String[] args) throws IOException {
         createChannel();
         sendFile();
-        client.close();
 
     }
 
@@ -24,11 +23,10 @@ public class FileSender {
         FileChannel fileChannel = FileChannel.open(path);
 
         //approach 1
-        fileChannel.transferTo(0, fileChannel.size(), client);
+       fileChannel.transferTo(0, fileChannel.size(), client);
 
         //approach 2
-
-//        ByteBuffer buffer = ByteBuffer.allocate(2048);
+//        ByteBuffer buffer = ByteBuffer.allocate(1024);
 //        int bytesRead = fileChannel.read(buffer);
 //        int i = 1;
 //        while(true){
@@ -42,13 +40,14 @@ public class FileSender {
 //                break;
 //            }
 //        }
+
         System.out.println("send file complete");
         fileChannel.close();
         client.close();
     }
 
     public static void createChannel() throws IOException {
-        client = SocketChannel.open(new InetSocketAddress("localhost", 5455));
+        client = SocketChannel.open(new InetSocketAddress("localhost", 5456));
         client.configureBlocking(false);
 
     }
