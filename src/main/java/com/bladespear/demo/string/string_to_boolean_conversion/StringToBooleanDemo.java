@@ -4,8 +4,8 @@ public class StringToBooleanDemo {
     public static void main(String[] args) {
         String trueString = "true";
 
-        boolean a = (boolean) trueString;
-        Boolean b = (Boolean) trueString;
-        boolean c = Boolean.valueOf(trueString)
+        //boolean a = (boolean) trueString;
+        //Boolean b = (Boolean) trueString;
+        boolean c = Boolean.valueOf(trueString);
     }
 }
