@@ -20,7 +20,7 @@
         </plugins>
     </build>
     <properties>
-        <jackson.version>2.9.9.2</jackson.version>
+        <jackson.version>2.9.10.4</jackson.version>
     </properties>
 
     <dependencies>
