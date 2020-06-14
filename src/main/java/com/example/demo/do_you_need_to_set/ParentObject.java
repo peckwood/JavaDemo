@@ -5,8 +5,6 @@ import java.util.List;
 public class ParentObject {
     private List<Integer> list;
 
-
-
     public List<Integer> getList() {
         return list;
     }
