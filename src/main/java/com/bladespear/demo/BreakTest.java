@@ -2,6 +2,11 @@ package com.bladespear.demo;
 
 public class BreakTest {
     public static void main(String[] args) {
+        System.out.println(true && false || false && true);
+        System.out.println(true && true || false && true);
+        System.out.println(true && true || false && false);
+
+
         int[] a = {1, 2, 3, 5, 7};
         int[] b = {1, 5, 9};
         for(int bn : b){
