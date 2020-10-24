@@ -1,4 +1,4 @@
-package com.bladespear.demo.do_you_need_to_set;
+package com.example.demo.do_you_need_to_set;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +25,5 @@ public class Main1 {
         l1 = new ArrayList<>(1);
 
         System.out.println("q: " + q);
-
-
-
-
     }
 }
