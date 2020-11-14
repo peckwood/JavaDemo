@@ -1,5 +1,5 @@
 package com.example.demo.override_overload_priority;
 
-public class C extends  B{
+public class C extends B{
 
 }
