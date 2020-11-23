@@ -13,9 +13,17 @@ public class CompareIntDemo {
         System.out.println("c.equals(a): " + c.equals(a));
 
         System.out.println("b.equals(c)) " + b.equals(c));
+        //the following line gives error for not using .equals()
         System.out.println("b==c: " + (b==c));
+
+        //comparing values
+        int d = 10;
+        long e = 10L;
+        System.out.println("d == e :" + (d ==  e));
 
         b = null;
         System.out.println("compare int with null: a == null: " + (a == b));
+
+
     }
 }
