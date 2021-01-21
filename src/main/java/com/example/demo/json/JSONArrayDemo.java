@@ -17,13 +17,20 @@ public class JSONArrayDemo {
         a.put(400L);
         a.put(500L);
         a.put(700L);
+        a.put(9999999999L);
         String aString = a.toString();
         System.out.println(aString);
         JSONArray b = new JSONArray(aString);
         System.out.println(b.toString());
         for(int i = 0;i<b.length();i++){
             //JSON converts stringLong to Integer
-            System.out.println((Long)b.get(i));
+            if (b.get(i) instanceof Integer){
+                System.out.println((Integer)b.get(i));
+            }else{
+                System.out.println((Long)b.get(i));
+            }
+
+
         }
     }
 }
