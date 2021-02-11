@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 
 public class BigDecimalDemo {
@@ -27,6 +28,21 @@ public class BigDecimalDemo {
         long result = toyPriceBigDecimal.divide(new BigDecimal(50), 0, RoundingMode.CEILING).multiply(new BigDecimal(50)).longValueExact();
         System.out.println("以50为精度, 向上取整 51 > "+result);
 
+        //除法, 保留2位小数
+        MathContext mathContext = new MathContext(2, RoundingMode.HALF_UP);
+        BigDecimal wrongWay = new BigDecimal(20).divide(new BigDecimal(3), mathContext);
+        BigDecimal quotient1 = new BigDecimal(20).divide(new BigDecimal(3), 2, RoundingMode.HALF_UP);
+        System.out.println("wrongWay: " + wrongWay);
+        System.out.println("quotient1: " + quotient1);
+
+        //precision vs scale
+        //scale: the number of digits to the right of the decimal point
+        //precision: number of significant digits
+        // https://stackoverflow.com/questions/3843440/bigdecimal-setscale-and-round
+        BigDecimal precision = new BigDecimal("35.3456").round(new MathContext(4, RoundingMode.HALF_UP));
+        BigDecimal scale = new BigDecimal("35.3456").setScale(4, RoundingMode.HALF_UP);
+        System.out.println("precision: " + precision);
+        System.out.println("scale: " + scale);
 
 
     }
