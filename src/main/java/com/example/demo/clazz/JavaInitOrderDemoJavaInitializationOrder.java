@@ -11,7 +11,7 @@ package com.example.demo.clazz;
 		constructor
 	}
 */
-public class JavaInitOrderDemoJava初始化顺序{
+public class JavaInitOrderDemoJavaInitializationOrder{
     static String b;//order 1
     String a;//order 4
 
@@ -24,14 +24,14 @@ public class JavaInitOrderDemoJava初始化顺序{
     }
 
     //order 6
-    public JavaInitOrderDemoJava初始化顺序(){//order 6
+    public JavaInitOrderDemoJavaInitializationOrder(){//order 6
         System.out.println("constructor");
     }
 
     public static void main(String[] args){//order 3
         System.out.println("main");
 
-        JavaInitOrderDemoJava初始化顺序 demo1 = new JavaInitOrderDemoJava初始化顺序();
+        JavaInitOrderDemoJavaInitializationOrder demo1 = new JavaInitOrderDemoJavaInitializationOrder();
         //JavaInitOrderDemo demo2 = new JavaInitOrderDemo();
     }
 }
