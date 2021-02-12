@@ -17,7 +17,7 @@ public class JacksonDemo {
             System.out.println(num);
         }
 
-        //Object to JSON
+        //Object to jsonString
         RetentionOrderPresubmitVerificationVo veri = new RetentionOrderPresubmitVerificationVo();
         veri.setRentOrderId("M1231212121212");
         veri.setTotalRetentionFee(1000000);
@@ -30,7 +30,7 @@ public class JacksonDemo {
         String jsonString = objectMapper.writeValueAsString(veri);
         System.out.println("veri stringified: " + jsonString);
 
-        //convert json to object
+        //convert jsonString to object
         RetentionOrderPresubmitVerificationVo veri1 = objectMapper.readValue(jsonString, RetentionOrderPresubmitVerificationVo.class);
         System.out.println("veri1: " + veri1);
 
@@ -46,5 +46,7 @@ public class JacksonDemo {
         Integer[] b = mapper.readValue(integerListJsonString, Integer[].class);
         System.out.println("a: " + a);
         System.out.println("b: " + Arrays.toString(b));
+
+
     }
 }
