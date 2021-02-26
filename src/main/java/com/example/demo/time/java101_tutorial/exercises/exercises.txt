@@ -1,0 +1,53 @@
+The following exercises challenge you to learn more about Date and Time:
+
+1. Consider the following code fragment:
+
+   System.out.printf("Now = %s%n", Instant.now());
+   System.out.printf("Now = %s%n", LocalDateTime.now());
+
+   When I executed this code fragment in my America/Chicago default time zone around 2:18PM on March 24, 2013, I observed the 
+   following output:
+
+   Now = 2013-03-24T19:18:33.355Z
+   Now = 2013-03-24T14:18:33.480
+
+   Why does the first line show 7:18:33PM when it's 2:18:33PM in my America/Chicago time zone?
+
+2. What is a partial? Identify java.time's classes that represent partials.
+
+3. What is a period?
+
+4. What is a clock? 
+
+5. How would you obtain a LocalDateTime that always uses the same instant on the time-line (for testing purposes)?
+
+6. Write a FrenchMonthNames application that uses Date and Time to obtain the 12 month names in French and output these 
+   names. For example, output janvier for January.
+
+7. I've created a ShowCalPage application (see the ShowCalPage directory in the exercises directory) that outputs calendar 
+   pages in the US or FRANCE locale. Here are examples for the same month:
+
+   March 2013
+   Su Mo Tu We Th Fr Sa 
+                   1  2
+    3  4  5  6  7  8  9
+   10 11 12 13 14 15 16
+   17 18 19 20 21 22 23
+   24 25 26 27 28 29 30
+   31 
+
+   mars 2013
+   di lu ma me je ve sa 
+                   1  2
+    3  4  5  6  7  8  9
+   10 11 12 13 14 15 16
+   17 18 19 20 21 22 23
+   24 25 26 27 28 29 30
+   31 
+
+   Rewrite this application so that it no longer requires the java.util package's Calendar, Iterator, Map, and Set types.
+   Instead, it should only require java.time's DayOfWeek, LocalDate, Month and java.time.format's TextStyle types. (Of 
+   course, you'll still need to use java.util.Locale.)
+
+You'll find the answers to these exercises in the answers directory's answers.txt file and associated subdirectories. Give 
+each exercise your best shot before checking the answer.

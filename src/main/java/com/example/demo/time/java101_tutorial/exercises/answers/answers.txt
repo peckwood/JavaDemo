@@ -1,0 +1,26 @@
+Here are my answers to the exercises:
+
+1. The first line shows 7:18:33PM when it's 2:18:33PM in my America/Chicago time zone because Instant.now() returns the 
+   current instant in the UTC time zone, which has a 0 offset. The DateTimeFormatter.ISO_INSTANT formatter used by Instant's 
+   toString() method places Z at the end of the resulting date-time string to show that the instant is local to UTC. To make 
+   it local to my time zone, I would add my time zone offset (-05:00 for daylight savings time) to the UTC time (e.g.,
+   7:18:33PM + -05:00 = 2:18:33PM).
+
+2. A partial is a class that provides a partial date-time representation. Because a partial contains incomplete 
+   information (including the absence of a time zone), it cannot completely represent a date-time on the timeline. LocalDate,
+   LocalTime, LocalDateTime, MonthDay, Year, and YearMonth are java.time classes that represent partials.
+
+3. A period is a date-based amount of time, such as '2 years, 3 months and 4 days'. In contrast, a duration is a time-based
+   amount of time.
+
+4. A clock is an object that provides access to the current instant, date and time using a time zone.
+
+5. You obtain a LocalDateTime that always uses the same instant on the timeline (for testing purposes) by invoking Clock's 
+   static Clock fixed(Instant fixedInstant, ZoneId zone) fluent factory method with the specified Instant and a ZoneId, and
+   then passing this Clock to LocalDateTime's static Instant now(Clock clock) fluent factory method.
+
+6. See the FrenchMonthNames subdirectory of answers for the source code to the application that obtains and outputs the 12 
+   month names in French.
+
+7. See the ShowCalPage subdirectory of answers for the source code to the application that uses java.time types to create a
+   calendar page.
