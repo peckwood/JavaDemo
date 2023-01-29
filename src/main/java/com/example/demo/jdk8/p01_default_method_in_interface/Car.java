@@ -1,7 +1,7 @@
 package com.example.demo.jdk8.p01_default_method_in_interface;
 
 public class Car implements Vehicle{
-    private String brand;
+    private final String brand;
 
     public Car(String brand) {
         this.brand = brand;
@@ -20,5 +20,10 @@ public class Car implements Vehicle{
     @Override
     public String slowDown() {
         return "正在减速";
+    }
+
+    @Override
+    public String turnLightOff() {
+        return "Car灭灯";
     }
 }
