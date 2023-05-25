@@ -15,4 +15,8 @@ public class DomainObject {
 	public String toString() {
 		return "DomainObject [name=" + name + "]";
 	}
+
+	public DomainObject(String name) {
+		this.name = name;
+	}
 }
