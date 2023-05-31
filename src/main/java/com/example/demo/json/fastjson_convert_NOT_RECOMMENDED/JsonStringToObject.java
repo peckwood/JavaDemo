@@ -3,6 +3,10 @@ package com.example.demo.json.fastjson_convert_NOT_RECOMMENDED;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
+/**
+ * JSON和JSONObject的parseObject一样
+ * 单引号和双引号一样
+ */
 public class JsonStringToObject {
 	public static void main(String[] args) {
 		String domainObjectString = "{\"name\":\"hello\"}";

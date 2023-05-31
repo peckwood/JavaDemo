@@ -19,4 +19,5 @@ public class DomainObject {
 	public DomainObject(String name) {
 		this.name = name;
 	}
+
 }
