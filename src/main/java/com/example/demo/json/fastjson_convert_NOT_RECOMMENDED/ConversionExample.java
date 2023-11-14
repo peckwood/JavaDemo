@@ -18,7 +18,10 @@ public class ConversionExample {
         System.out.println("2. java object > json string: " + jsonString);
 
         JSONObject jsonObject = JSONObject.parseObject(javaObject2JsonString(javaObj));
-        System.out.println("3. json string > jsonObject: " + jsonObject);
+        System.out.println("3.1 json string > jsonObject: " + jsonObject);
+
+        JSONObject jsonObject3 = (JSONObject) JSONObject.parse(javaObject2JsonString(javaObj));
+        System.out.println("3.2 json string > jsonObject: " + jsonObject3);
 
         DomainObject resultJavaObj = JSONObject.parseObject(javaObject2JsonString(javaObj), DomainObject.class);
         System.out.println("4. json string > java object: " + resultJavaObj);
@@ -42,4 +45,10 @@ public class ConversionExample {
         String jsonString = JSONObject.toJSONString(javaObj);
         return jsonString;
     }
+
+//
+private static Object ttt(String jsonString) {
+    Object obj = JSONObject.parse(jsonString);
+    return obj;
+}
 }
