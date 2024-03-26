@@ -2,6 +2,7 @@ package com.example.demo.time.java101_tutorial.MachineTimeDemo.v2;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalTime;
 
 public class MachineTimeDemo
 {
@@ -19,5 +20,10 @@ public class MachineTimeDemo
       System.out.printf("Seconds = %d%n", dur.getSeconds());
       System.out.printf("Is negative = %b%n", dur.isNegative());
       System.out.printf("Is zero = %b%n", dur.isZero());
+
+      LocalTime start = LocalTime.of(8, 0);
+      LocalTime end = LocalTime.of(9, 0);
+      System.out.printf("Duration.between(start, end): %s%n", Duration.between(start, end));
+      System.out.printf("duration.getSeconds: %s", Duration.between(start, end).getSeconds());
    }
 }
