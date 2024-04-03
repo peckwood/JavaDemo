@@ -2,16 +2,20 @@
 package com.example.demo.json.jackson_demo;
 
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.IOException;
 import java.util.*;
 
 public class JacksonDemo {
+    static ObjectMapper mapper = new ObjectMapper();
+
     public static void main(String[] args) throws IOException {
         //jsonString to Long[]数组
         String longNumberJsonArrayString = "[1,2,3]";
-        ObjectMapper mapper = new ObjectMapper();
+
         Long[] longNumbers = mapper.readValue(longNumberJsonArrayString, Long[].class);
         for(Long num : longNumbers){
             System.out.println(num);
@@ -30,11 +34,11 @@ public class JacksonDemo {
         String jsonString = objectMapper.writeValueAsString(veri);
         System.out.println("veri stringified: " + jsonString);
 
-        //convert jsonString to object
+
         RetentionOrderPresubmitVerificationVo veri1 = objectMapper.readValue(jsonString, RetentionOrderPresubmitVerificationVo.class);
         System.out.println("veri1: " + veri1);
 
-        //List<Integer> to jsonString
+        System.out.println("\nList<Integer> to jsonString");
         List<Integer> integerList = new ArrayList<>();
         integerList.add(4);
         integerList.add(3);
@@ -47,6 +51,16 @@ public class JacksonDemo {
         System.out.println("a: " + a);
         System.out.println("b: " + Arrays.toString(b));
 
+        System.out.println("\njson string to ObjectNode");
+        String json = "{" +
+                "\"name\": \"raiden\"," +
+                "\"id\": 100" +
+                "}";
+        ObjectNode objectNode = mapper.readValue(json, ObjectNode.class);
+        JsonNode name = objectNode.get("name");
+        System.out.println(name.textValue());
+        JsonNode id = objectNode.get("id");
+        System.out.println(id.intValue());
 
     }
 }
