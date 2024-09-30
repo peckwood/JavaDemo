@@ -11,37 +11,38 @@ public class ConversionExample {
 
     public static void main(String[] args) {
 
-        JSONObject jsonObj = javaObject2JsonObject(javaObj);
+        JSONObject jsonObj = getJSONObject(javaObj);
         System.out.println("1. java object > json object: " + jsonObj);
 
-        String jsonString = javaObject2JsonString(javaObj);
+        String jsonString = getJsonString(javaObj);
         System.out.println("2. java object > json string: " + jsonString);
 
-        JSONObject jsonObject = JSONObject.parseObject(javaObject2JsonString(javaObj));
+        JSONObject jsonObject = JSONObject.parseObject(getJsonString(javaObj));
         System.out.println("3.1 json string > jsonObject: " + jsonObject);
 
-        JSONObject jsonObject3 = (JSONObject) JSONObject.parse(javaObject2JsonString(javaObj));
+        JSONObject jsonObject3 = (JSONObject) JSONObject.parse(getJsonString(javaObj));
         System.out.println("3.2 json string > jsonObject: " + jsonObject3);
 
-        DomainObject resultJavaObj = JSONObject.parseObject(javaObject2JsonString(javaObj), DomainObject.class);
+        DomainObject resultJavaObj = JSONObject.parseObject(getJsonString(javaObj), DomainObject.class);
         System.out.println("4. json string > java object: " + resultJavaObj);
 
-        DomainObject javaObject = JSONObject.toJavaObject(javaObject2JsonObject(javaObj), DomainObject.class);
+        DomainObject javaObject = JSONObject.toJavaObject(getJSONObject(javaObj), DomainObject.class);
         System.out.println("5. json obj > java object: " + javaObject);
+        DomainObject javaObject2 = getJSONObject(javaObj).toJavaObject(DomainObject.class);
+        System.out.println("5.2 json obj > java object: " + javaObject2);
 
-        String jsonString2 = JSONObject.toJSONString(javaObject2JsonObject(javaObj));
+        String jsonString2 = JSONObject.toJSONString(getJSONObject(javaObj));
         System.out.println("6. json object to json string: " + jsonString2);
+
 
     }
 
-    //java object to json object
-    private static JSONObject javaObject2JsonObject(Object javaObj){
+    private static JSONObject getJSONObject(Object javaObj){
         JSONObject jsonObject = (JSONObject) JSONObject.toJSON(javaObj);
         return jsonObject;
     }
 
-    // java object to json string
-    private static String javaObject2JsonString(Object javaObj){
+    private static String getJsonString(Object javaObj){
         String jsonString = JSONObject.toJSONString(javaObj);
         return jsonString;
     }
