@@ -3,6 +3,7 @@ package com.example.demo;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class BigDecimalDemo {
     public static void main(String[] args) {
@@ -44,6 +45,14 @@ public class BigDecimalDemo {
         System.out.println("precision: " + precision);
         System.out.println("scale: " + scale);
 
+        System.out.println("格式化BigDeciaml https://jenkov.com/tutorials/java-internationalization/decimalformat.html");
+        System.out.println("format1: " + new DecimalFormat("#0.##%").format(new BigDecimal("32.445")));
+        System.out.println("format2: " + new DecimalFormat("0.##%").format(new BigDecimal("32.445")));
+        System.out.println("format3: " + new DecimalFormat("#0.##%").format(new BigDecimal("0.005")));
+        System.out.println("format4: " + new DecimalFormat("#.##%").format(new BigDecimal("0.005")));
+        System.out.println("format5: " + new DecimalFormat("00.##%").format(new BigDecimal("0.005")));
+        System.out.println("format6: " + new DecimalFormat("#.##%").format(new BigDecimal("0.34")));
+        System.out.println("format7: " + new DecimalFormat("#.##%").format(new BigDecimal("0.3467")));
 
     }
 }
