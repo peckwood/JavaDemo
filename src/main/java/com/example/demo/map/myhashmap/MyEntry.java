@@ -4,6 +4,7 @@ public class MyEntry<K, V>{
     private final K key;
     private V value;
     private MyEntry<K, V> next;
+    private String ehl;
 
     public MyEntry(K key, V value, MyEntry<K, V> next){
         this.key = key;
