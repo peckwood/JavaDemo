@@ -7,7 +7,7 @@ public class D26_BufferedOutputStreamDemo {
     public static void main(String[] args) {
         int bufferSize = 4 * 1024;
         String sourceImpagePath = "io/parrot.jpg";
-        String absoluteImagePath = "D:\\workspace\\java_project\\org_json_demo\\io\\parrot.jpg";
+        String absoluteImagePath = "D:\\projects\\showcase\\JavaDemo\\io\\parrot.jpg";
         String outputImagePath1 = "io/parrot3.jpg";
         String outputImagePath2 = "io/parrot4.jpg";
 
