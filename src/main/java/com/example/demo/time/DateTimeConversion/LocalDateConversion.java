@@ -5,11 +5,9 @@ import org.junit.Test;
 import java.time.*;
 
 public class LocalDateConversion{
-    private static ZoneId zoneId = ZoneId.of("Asia/Shanghai");
-
     @Test
     public void instant2LocalDate(){
-        LocalDate localDate = CommonUtil.getInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate localDate = CommonUtil.getInstant().atZone(CommonUtil.ZONE_ID).toLocalDate();
         System.out.println(localDate);
     }
 }

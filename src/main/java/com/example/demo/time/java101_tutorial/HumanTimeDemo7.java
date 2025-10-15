@@ -1,5 +1,7 @@
 package com.example.demo.time.java101_tutorial;
 
+import com.example.demo.time.DateTimeConversion.CommonUtil;
+
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
@@ -11,7 +13,7 @@ public class HumanTimeDemo7
 {
     public static void main(String[] args)
     {
-        ZoneId zid = ZoneId.systemDefault();
+        ZoneId zid = CommonUtil.ZONE_ID;
         System.out.printf("Zone Id = %s%n", zid);
         System.out.printf("Rules = %s%n", zid.getRules());
         System.out.printf("DST in effect: %b%n",

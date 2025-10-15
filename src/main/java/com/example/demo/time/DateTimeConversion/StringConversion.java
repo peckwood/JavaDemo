@@ -33,12 +33,12 @@ public class StringConversion {
 
         //approach 1
         // you need to add zone for formatter:
-        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneId.systemDefault());
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(CommonUtil.ZONE_ID);
         System.out.println(formatter2.format(myInstant));
 
         //approach 1
         // convert instant to ZonedDateTime
-        ZonedDateTime zonedDateTime = myInstant.atZone(ZoneId.systemDefault());
+        ZonedDateTime zonedDateTime = myInstant.atZone(CommonUtil.ZONE_ID);
         System.out.println(formatter.format(zonedDateTime));
 
     }
