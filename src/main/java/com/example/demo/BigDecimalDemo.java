@@ -53,6 +53,9 @@ public class BigDecimalDemo {
         System.out.println("format5: " + new DecimalFormat("00.##%").format(new BigDecimal("0.005")));
         System.out.println("format6: " + new DecimalFormat("#.##%").format(new BigDecimal("0.34")));
         System.out.println("format7: " + new DecimalFormat("#.##%").format(new BigDecimal("0.3467")));
+        System.out.println();
+        System.out.println("format8: " + new DecimalFormat("0.##%").format(new BigDecimal("0.004")));
+        System.out.println("format9: " + new DecimalFormat("#.##%").format(new BigDecimal("0.004")));
 
     }
 }
