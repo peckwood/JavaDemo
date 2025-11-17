@@ -48,6 +48,8 @@ public class BigDecimalDemo {
         System.out.println("格式化BigDeciaml https://jenkov.com/tutorials/java-internationalization/decimalformat.html");
         System.out.println("format1: " + new DecimalFormat("#0.##%").format(new BigDecimal("32.445")));
         System.out.println("format2: " + new DecimalFormat("0.##%").format(new BigDecimal("32.445")));
+
+
         System.out.println("format3: " + new DecimalFormat("#0.##%").format(new BigDecimal("0.005")));
         System.out.println("format4: " + new DecimalFormat("#.##%").format(new BigDecimal("0.005")));
         System.out.println("format5: " + new DecimalFormat("00.##%").format(new BigDecimal("0.005")));
@@ -57,5 +59,15 @@ public class BigDecimalDemo {
         System.out.println("format8: " + new DecimalFormat("0.##%").format(new BigDecimal("0.004")));
         System.out.println("format9: " + new DecimalFormat("#.##%").format(new BigDecimal("0.004")));
 
+        // 百分号, 但是去掉后面的百分号
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        decimalFormat.setMultiplier(100);
+        System.out.println("format10: " + decimalFormat.format(new BigDecimal("0.004")));
+
+        //千分符
+        System.out.println("format15: " + new DecimalFormat("###,###,###,##0.00").format(new BigDecimal("173680.06")));
+
+        //默认展示
+        System.out.println("format20: " + new BigDecimal("1736800000.06").toString());
     }
 }
