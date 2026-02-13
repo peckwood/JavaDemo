@@ -9,14 +9,19 @@ public class Regex{
     public static void main(String[] args){
         String input = "http://192.168.1.253:18888/2021/03/11/896459e4-875f-455a-a2cb-768c879555e7.png";
         String regex = "http://[^/]+(.+)";
+        matchRegex(regex, input);
+        matchRegex("//fgcminiprogram//*", "/fgcminiprogram/aaa");
+    }
+
+    private static void matchRegex(String regex, String input){
         //Create a Pattern object
         Pattern pattern = Pattern.compile(regex);
         //Now create matcher object.
         Matcher matcher = pattern.matcher(input);
         if (matcher.find( )) {
-            System.out.println("Found value: " + matcher.group(0) );
-            System.out.println("Found value: " + matcher.group(1) );
-            System.out.println("Found value: " + matcher.group(2) );
+            for (int i = 0; i < matcher.groupCount(); i++) {
+                System.out.println(matcher.group(i));
+            }
         } else {
             System.out.println("NO MATCH");
         }
