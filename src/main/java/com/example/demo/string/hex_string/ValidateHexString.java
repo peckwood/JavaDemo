@@ -6,7 +6,7 @@ public class ValidateHexString{
     @Test
     public void validate(){
         for (String string : StringContainer.getStringList()){
-            if(!isValidHex(string)){
+            if(!isValidHexPerformance(string)){
                 System.out.printf("'%s' is not valid%n", string);
             }
         }
