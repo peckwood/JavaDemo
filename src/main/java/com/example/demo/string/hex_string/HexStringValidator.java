@@ -2,7 +2,7 @@ package com.example.demo.string.hex_string;
 
 import org.junit.Test;
 
-public class ValidateHexString{
+public class HexStringValidator{
     @Test
     public void validate(){
         for (String string : StringContainer.getStringList()){
