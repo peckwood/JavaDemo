@@ -1,4 +1,4 @@
-package com.example.demo.string.hex_string;
+package com.example.demo.encode.hex_string;
 
 import java.util.Arrays;
 import java.util.List;
